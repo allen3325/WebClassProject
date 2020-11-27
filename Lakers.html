@@ -10,13 +10,21 @@
         <script>
             $(document).ready(function(){
                 $('.btn').click(function (e) { 
-                    $('.img1').delay(0).fadeIn();
-                    $('.img2').delay(500).slideDown();
+                    $('.img1').delay(500).slideDown();
                 });
-            })
+            });
+            $(document).ready(function(){
+                $('.btn2').click(function (e) { 
+                    $('.img1').delay(500).slideUp();
+                });
+            });
         </script>
         <style>
             .btn{
+                background-color:fuchsia;
+                text-align: center;
+            }
+            .btn2{
                 background-color:fuchsia;
                 text-align: center;
             }
@@ -35,6 +43,7 @@
                 opacity: 1;
                 transition: 1s;
             }
+            ul{white-space:nowrap;}
             img:hover
             {
                 border-radius: 30%;
@@ -44,7 +53,7 @@
     </head>
     <body>
         <button class="btn">秀出有哪些球員</button>
-        <div class="initail img1"><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px"></div>
-        <div class="initail img2"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" width="300px" height="400px"></div>
+        <button class="btn2">收回</button>
+        <div class="initail img1"><ul><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" width="300px" height="400px"></ul></div>
     </body>
 </html>
