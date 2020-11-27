@@ -21,6 +21,10 @@
                     document.getElementById("result").innerHTML="";
                 });
             });
+            function cardbook()
+            {
+                window.alert("已加入球員卡收藏冊中");
+            }
             function writekobe()
             {
                 var output="";
@@ -49,7 +53,7 @@
                 width: 150px;
                 opacity: 1;
                 border:none;
-                transition: 1s;
+                transition: 0.5s;
             }
             .btn:hover{
                 font-family: Noto Sans TC, Perpetua, serif;
@@ -69,7 +73,7 @@
                 width: 150px;
                 opacity: 1;
                 border:none;
-                transition: 1s;
+                transition: 0.5s;
             }
             .btn2:hover{
                 font-family: Noto Sans TC, Perpetua, serif;
@@ -91,14 +95,13 @@
                 background-size: cover;
             }
             .initail{display: none;}
-            img
+            ul{white-space: nowrap;}
+            input
             {
                 opacity: 1;
                 transition: 1s;
             }
-            ul{white-space:nowrap;}
-            img:hover
-            {
+            input:hover{
                 border-radius: 30%;
                 opacity: 0.8;
             }
@@ -107,13 +110,25 @@
                 font-size: 20px;
                 font-family: Noto Sans TC, Perpetua, serif;
                 background-color: aliceblue;
+                color:hotpink;
+            }
+            h1
+            {   
+                text-align: center;
+                background-color: rgba(6, 127, 233, 0.603);
+                color:hotpink;
+                font-family: Noto Sans TC, Perpetua, serif;
             }
         </style>
     </head>
     <body>
+        <h1>點擊球員顯示球員詳細資料<br>雙擊球員加入球員卡收藏冊</h1>
         <button class="btn">秀出有哪些球員</button>
         <button class="btn2">收回球員卡</button>
-        <div class="initail img1"><ul><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px" onclick="writekobe()"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" id="shaq" width="300px" height="400px" onclick="writeshaq()"></ul></div>
+        <div class="initail img1"><ul>
+            <input type="image" src="https://allen3325.github.io/WebClassProject/Kobe.png" height="400px" width="300px" name="Kobe" id="Kobe" ondblclick="cardbook()" onclick="writekobe()" />
+            <input type="image" src="https://allen3325.github.io/WebClassProject/Shaq.png" height="400px" width="300px" name="Shaq" id="Shaq" ondblclick="cardbook()" onclick="writeshaq()" />
+        </ul></div>
         <div class="Text" id="result"></div>
     </body>
 </html>
