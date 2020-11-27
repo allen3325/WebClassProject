@@ -12,19 +12,20 @@
             var output="";
             $(document).ready(function(){
                 $('.btn').click(function () { 
-                    $('.img1').delay(500).slideDown();
+                    $('.img1').delay(200).slideDown();
                 });
             });
             $(document).ready(function(){
                 $('.btn2').click(function () { 
-                    $('.img1').delay(500).slideUp();
+                    $('.img1').delay(200).slideUp();
+                    document.getElementById("result").innerHTML="";
                 });
             });
             function writekobe()
             {
                 var output="";
                 output+="<p>";
-                output+="kobe here"
+                output+="kobe here"//-----------------------------------------------------寫這裡----------------------------------------------------
                 output+="</p>";
                 document.getElementById("result").innerHTML=output;
             }
@@ -32,7 +33,7 @@
             {
                 var output="";
                 output+="<p>";
-                output+="shaq here"
+                output+="shaq here"//-----------------------------------------------------寫這裡----------------------------------------------------
                 output+="</p>";
                 document.getElementById("result").innerHTML=output;
             }
@@ -111,8 +112,8 @@
     </head>
     <body>
         <button class="btn">秀出有哪些球員</button>
-        <button class="btn2">收回</button>
+        <button class="btn2">收回球員卡</button>
         <div class="initail img1"><ul><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px" onclick="writekobe()"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" id="shaq" width="300px" height="400px" onclick="writeshaq()"></ul></div>
-        <div id="result"></div>
+        <div class="Text" id="result"></div>
     </body>
 </html>
