@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="bg">
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+                <meta charset="utf-8">
+        <title>Lakers</title>
+        <script>
+            $(document).ready(function(){
+                $('.btn').click(function (e) { 
+                    $('.img1').delay(0).fadeIn();
+                    $('.img2').delay(500).slideDown();
+                });
+            })
+        </script>
+        <style>
+            .btn{
+                background-color:fuchsia;
+                text-align: center;
+            }
+            .bg
+            {
+                background-image: url("https://allen3325.github.io/WebClassProject/LA.jpg");
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .initail{display: none;}
+            img
+            {
+                opacity: 1;
+                transition: 1s;
+            }
+            img:hover
+            {
+                border-radius: 30%;
+                opacity: 0.8;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn">秀出有哪些球員</button>
+        <div class="initail img1"><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px"></div>
+        <div class="initail img2"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" width="300px" height="400px"></div>
+    </body>
+</html>
