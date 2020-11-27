@@ -1,3 +1,4 @@
+<!--RWD-->
 <!DOCTYPE html>
 <html class="bg">
     <head>
@@ -8,6 +9,7 @@
         <meta charset="utf-8">
         <title>Lakers</title>
         <script>
+            var output="";
             $(document).ready(function(){
                 $('.btn').click(function () { 
                     $('.img1').delay(500).slideDown();
@@ -18,8 +20,25 @@
                     $('.img1').delay(500).slideUp();
                 });
             });
+            function writekobe()
+            {
+                var output="";
+                output+="<p>";
+                output+="kobe here"
+                output+="</p>";
+                document.getElementById("result").innerHTML=output;
+            }
+            function writeshaq()
+            {
+                var output="";
+                output+="<p>";
+                output+="shaq here"
+                output+="</p>";
+                document.getElementById("result").innerHTML=output;
+            }
         </script>
         <style>
+            /*從這裡到-----------------------------------------------------------------------------------------------------------------------------*/
             @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
             .btn{
                 font-family: Noto Sans TC, Perpetua, serif;
@@ -82,11 +101,18 @@
                 border-radius: 30%;
                 opacity: 0.8;
             }
+            /*這裡勿動----------------------------------------------------------------------------------------------------------------------------*/
+            p{
+                font-size: 20px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color: aliceblue;
+            }
         </style>
     </head>
     <body>
         <button class="btn">秀出有哪些球員</button>
         <button class="btn2">收回</button>
-        <div class="initail img1"><ul><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" width="300px" height="400px"></ul></div>
+        <div class="initail img1"><ul><img src="https://allen3325.github.io/WebClassProject/Kobe.png" width="300px" height="400px" onclick="writekobe()"><img src="https://allen3325.github.io/WebClassProject/Shaq.png" id="shaq" width="300px" height="400px" onclick="writeshaq()"></ul></div>
+        <div id="result"></div>
     </body>
 </html>
