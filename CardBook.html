@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="bg">
+    <meat charset="utf-8">
+        <head>
+            <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+            <script>
+                var output="";
+                $(document).ready(function(){
+                    $('.btn1').click(function () { 
+                        $('.img1').delay(200).slideDown();
+                    });
+                });
+                $(document).ready(function(){
+                    $('.btn2').click(function () { 
+                        $('.img1').delay(200).slideUp();
+                    });
+                });
+                function start(){
+                    document.getElementById("btn1").addEventListener("click",showcard,false);
+                }
+                function showcard(){
+                    output="";
+                    var check=localStorage.length;
+                    if(check==0)
+                        window.alert("你尚未加入任何球員卡!!!!");
+                    while(check>0)
+                        {
+                            check-=1;
+                            objA=JSON.parse(localStorage.getItem(localStorage.key(check)));
+                            console.log(objA.pic,objA.name);
+                            output +="<input type='image' src="+objA.pic+" height='400px' width='300px' name="+objA.name+" id="+objA.name+" onclick='rmvcard(" + objA.name + ")'/>";
+                        }
+                    document.getElementById("result").innerHTML=output;
+                }
+                function rmvcard(player)
+                {
+                    if (confirm("你確定要刪除"+player.name+"?")){
+                        　localStorage.removeItem(player.name);
+                          showcard();
+                    }
+                }
+                window.addEventListener("load",start,false);
+            </script>
+            <style>
+                @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+                .bg{background-color: rgba(0, 0, 0, 0.904);}
+                ul{white-space: nowrap;}
+                .initial{display: none;}
+                .btn1{
+                    color: white;
+                    font-size: 18px;
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    background-color:rgb(2, 83, 165);
+                    text-align: center;
+                    height: 80px;
+                    width: 150px;
+                    border:none;
+                    transition: 0.5s;
+                }
+                .btn1:hover{
+                    font-size: 18px;
+                    color: white;
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    background-color:rgb(204, 43, 49);
+                    text-align: center;
+                    height: 80px;
+                    width: 150px;
+                    border-radius: 20%;
+                    border:none;
+                }
+                .btn2{
+                    color: white;
+                    font-size: 18px;
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    background-color:rgb(2, 83, 165);
+                    text-align: center;
+                    height: 80px;
+                    width: 150px;
+                    border:none;
+                    transition: 0.5s;
+                }
+                .btn2:hover{
+                    font-size: 18px;
+                    color: white;
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    background-color:rgb(204, 43, 49);
+                    text-align: center;
+                    height: 80px;
+                    width: 150px;
+                    border-radius: 20%;
+                    border:none;
+                }
+                input{
+                    transition: 1s;
+                }
+                input:hover{
+                    transform: scale(1.3);
+                }
+                h1{
+                    font-family: 'KaiTi';
+                    position: relative;
+                    text-align: center;
+                    font-size: 100px;
+                    background: -webkit-linear-gradient(bottom,rgb(69, 69, 73) 0,rgb(120, 121, 128) 26%,rgb(141, 142, 151) 50%, rgb(169, 170, 180) 76% ,rgb(182, 183, 194) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .temp{
+                    font-family: 'KaiTi';
+                    position: relative;
+                    top: -80px;
+                    font-size: 50px;
+                    text-align: center;
+                    background: -webkit-linear-gradient(bottom,rgb(182, 183, 194) 0,rgb(169, 170, 180) 26%,rgb(141, 142, 151) 50%, rgb(120, 121, 128) 76% ,rgb(69, 69, 73) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .home{
+                    color: white;
+                    font-size: 18px;
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    background-color:rgb(2, 83, 165);
+                    text-align: center;
+                    height: 80px;
+                    width: 150px;
+                    border:none;
+                    transition: 0.5s;
+                }
+                .home:hover{
+                    font-size: 18px;
+                    color: white;
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    background-color:rgb(204, 43, 49);
+                    text-align: center;
+                    height: 80px;
+                    width: 150px;
+                    border-radius: 20%;
+                    border:none;
+                }
+                footer{
+                    white-space: nowrap;
+                    position: relative;
+                    margin-left: 91.3%;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>球員收藏冊</h1>
+            <h1 class="temp">點擊球員將球員移出球員收藏冊</h1>
+            <button class="btn1" id="btn1">打開收藏冊</button>
+            <button class="btn2" id="btn2">關閉收藏冊</button><br>
+            <div class="initial img1" id="result"><ul>
+            </ul></div>
+        </body>
+        <footer>
+            <a href="Home.html"><button class="home">回主頁</button>
+        </footer>
+</html>
