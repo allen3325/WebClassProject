@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html id="bg2">
     <head>
+        <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
         <script>
             function start(){
-                window.setTimeout(function(){location.href="https://allen3325.github.io/WebClassProject/Home.html";},2500);
+                window.setTimeout(function(){location.href="https://allen3325.github.io/WebClassProject/Home.html";},2000);
             }
             window.addEventListener("load",start,false);
         </script>
         <meta charset="utf-8">
         <title>頁面載入中</title>
         <style>
-            #bg{
-                background-image: url("temp.gif");
-                background-color: rgb(25, 31, 38);
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                margin-left: -400px;
-                margin-top: -300px;
-                background-repeat: no-repeat;
-            }
             #bg2{
                 background-image: url("https://allen3325.github.io/WebClassProject/assets/loading.gif");
                 background-repeat: no-repeat;
@@ -28,10 +22,24 @@
                 left: 50%;
                 top: 50%;
                 margin-left: -140px;
-                margin-top: -140px;
+                margin-top: -200px;
+            }
+            h1{
+                color: rgb(85,66,45);
+                font-size: 100px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                position: absolute;
+                top:100px;
+                left: -70px;
+            }
+            .animate__animated.animate__bounceOut {
+                --animate-duration: 2.5s;
             }
         </style>
+        <h1 class="animate__animated animate__bounceOut">Loading...</h1>
     </head>
     <body>
     </body>
+    <footer>
+    </footer>
 </html>
