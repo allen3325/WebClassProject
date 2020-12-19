@@ -1,0 +1,159 @@
+<!--RWD-->
+<!DOCTYPE html>
+<html class="bg">
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>    
+    <head>
+        <meta charset="utf-8">
+        <title>Suns</title>
+        <script>
+            var output="";
+            $(document).ready(function(){
+                $('.btn').click(function () { 
+                    $('.img1').delay(200).slideDown();
+                });
+            });
+            $(document).ready(function(){
+                $('.btn2').click(function () { 
+                    $('.img1').delay(200).slideUp();
+                    document.getElementById("result").innerHTML="";
+                });
+            });
+            function cardbook(player)
+            {
+                console.log(player.name);
+                var Name=player.name;
+                var Src=player.src;
+                var objA={"name":player.name, "pic":player.src};
+                var JSONA=JSON.stringify(objA);
+                var KEY=objA.name;
+                localStorage.setItem(KEY,JSONA);
+                window.alert("已加入球員卡收藏冊中");
+            }
+        </script>
+        <style>
+            /*從這裡到-----------------------------------------------------------------------------------------------------------------------------*/
+            @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+            .btn{
+                font-size: 18px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:rgb(215, 168, 249);
+                text-align: center;
+                height: 80px;
+                width: 150px;
+                opacity: 1;
+                border:none;
+                transition: 0.5s;
+            }
+            .btn:hover{
+                font-size: 18px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:rgb(249, 251, 56);
+                text-align: center;
+                height: 80px;
+                width: 150px;
+                border-radius: 20%;
+                border:none;
+                opacity: 0.7;
+            }
+            .home{
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:rgb(215, 168, 249);
+                text-align: center;
+                height: 80px;
+                width: 150px;
+                opacity: 1;
+                border:none;
+                transition: 0.5s;
+            }
+            .home:hover{
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:rgb(249, 251, 56);
+                text-align: center;
+                height: 80px;
+                width: 150px;
+                border-radius: 20%;
+                border:none;
+                opacity: 0.7;
+            }
+            .btn2{
+                font-size: 18px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:rgb(215, 168, 249);
+                text-align: center;
+                height: 80px;
+                width: 150px;
+                opacity: 1;
+                border:none;
+                transition: 0.5s;
+            }
+            .btn2:hover{
+                font-size: 18px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:rgb(249, 251, 56);
+                text-align: center;
+                height: 80px;
+                width: 150px;
+                border-radius: 20%;
+                border:none;
+                opacity: 0.7;
+            }
+            .bg
+            {
+                background-image: url("https://allen3325.github.io/WebClassProject/assets/76ers.jpg");
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-repeat:repeat;
+                background-size: cover;
+            }
+            .initial{display: none;}
+            ul{white-space: nowrap;}
+            input
+            {
+                opacity: 1;
+                transition: 0.5s;
+            }
+            input:hover{
+                border-radius: 30%;
+                opacity: 0.8;
+            }
+            /*到這裡勿動----------------------------------------------------------------------------------------------------------------------------*/
+            p{
+                font-size: 20px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color: aliceblue;
+                color:hotpink;
+            }
+            h1
+            {   
+                text-align: center;
+                background-color: rgba(6, 127, 233, 0.603);
+                color:hotpink;
+                font-family: Noto Sans TC, Perpetua, serif;
+            }
+            footer{
+                white-space: nowrap;
+                position: relative;
+                margin-left: 83.7%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>點擊球員加入球員卡收藏冊</h1>
+        <button class="btn">秀出有哪些球員</button>
+        <button class="btn2">收回球員卡</button>
+        <!--每隔6張圖片換行-->
+        <div class="initial img1"><ul>
+            <!--<input type="image" src="https://allen3325.github.io/WebClassProject/player/Barkley.png" height="400px" width="300px" name="Barkley" id="Barkley" onclick="cardbook(Barkley)"/>-->
+            
+        </ul></div>
+        <div class="Text" id="result"></div>
+    </body>
+    <footer>
+        <a href="https://allen3325.github.io/WebClassProject/Home.html"><button class="home">回主頁</button>
+        <a href="https://allen3325.github.io/WebClassProject/CardBook.html"><button class="home">球員收藏冊</button>
+    </footer>
+</html>
