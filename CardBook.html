@@ -30,7 +30,6 @@
                         {
                             check-=1;
                             objA=JSON.parse(localStorage.getItem(localStorage.key(check)));
-                            console.log(objA.pic,objA.name);
                             output +="<input type='image' src="+objA.pic+" height='400px' width='300px' name="+objA.name+" id="+objA.name+" onclick='write"+objA.name+"("+")' ondblclick='rmvcard(" + objA.name + ")'/>";
                         }
                     document.getElementById("result").innerHTML=output;
