@@ -24,14 +24,17 @@
                 function showcard(){
                     output="";
                     var check=localStorage.length;
-                    if(check==0)
+                    if(check==1 && localStorage.key(check-1)=='money')
                         window.alert("你尚未加入任何球員卡!!!!");
                     while(check>0)
+                    {
+                        if(localStorage.key(check-1)!='money')
                         {
-                            check-=1;
-                            objA=JSON.parse(localStorage.getItem(localStorage.key(check)));
+                            objA=JSON.parse(localStorage.getItem(localStorage.key(check-1)));
                             output +="<input type='image' src="+objA.pic+" height='400px' width='300px' name="+objA.name+" id="+objA.name+" onclick='write"+objA.name+"("+")' ondblclick='rmvcard(" + objA.name + ")'/>";
                         }
+                        check-=1;
+                    }
                     document.getElementById("result").innerHTML=output;
                 }
                 function rmvcard(player)
