@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="bg">
     <meat charset="utf-8">
-        <head>
-            <script
+        <script
         src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
@@ -19,6 +18,18 @@
                     });
                 });
                 function start(){
+                    //preload picture
+                    var picURL='';
+                    for(let i=0;i<localStorage.length;i++)
+                    {
+                        if(localStorage.key(i)!='money')
+                        {
+                            player=JSON.parse(localStorage.getItem(localStorage.key(i)));
+                            console.log(player.pic);
+                            picURL+='<link rel="preload" href="'+player.pic+'" as="image">'
+                        }
+                    }
+                    $('#preload').html(picURL);
                     document.getElementById("btn1").addEventListener("click",showcard,false);
                 }
                 function showcard(){
@@ -304,6 +315,8 @@
                     text-align: justify;
                 }
             </style>
+        <head>
+            <div id='preload'></div>
         </head>
         <h1>球員收藏冊</h1>
         <body>
