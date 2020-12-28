@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class='bg'>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script>
+        var len;
+        var moneyexit=false;
+        var moneyinArr=false;
+        var plyrArray=["Kobe","Shaq","Chamberlain","Jabbar","JerryWest","MagicJohnson","Worthy"];
+        function updateMoney ()
+        {
+            console.log(String(localStorage.getItem('money')));
+            var output="餘額:";
+            if(localStorage.getItem('money'))
+            {
+                output+=String(localStorage.getItem('money'));
+            }
+            else
+            {
+                output="你還沒去玩過遊戲喔~~~<br>先去玩遊戲賺錢吧!!!";
+            }
+            document.getElementById('showmoney').innerHTML=output;
+        }
+        function cardbook(player)
+        {
+            var Name=player.name;
+            var Src=player.src;
+            var objA={"name":player.name, "pic":player.src};
+            var JSONA=JSON.stringify(objA);
+            var KEY=objA.name;
+            localStorage.setItem(KEY,JSONA);
+            window.alert("已將"+player.name+"加入球員卡收藏冊中");
+        }
+        function random()
+        {
+            //check money is in plyrArr
+            for(let i=0;i<plyrArray.length;i++)
+            {
+                if(plyrArray[i]=='money')
+                {
+                    moneyinArr=true;
+                }
+            }
+            //console.log(moneyinArr);
+            //check money is in localStorage and not in plyrArr
+            if(localStorage.getItem('money') && !moneyinArr)
+            {
+                plyrArray.push('money');
+                console.log(123);
+            }
+            len=localStorage.length;
+            console.log(len,plyrArray.length);
+            //check player has all player card
+            if(len==plyrArray.length)
+            {
+                console.log(len);   
+                window.alert("你已全蒐集完畢!!!!");
+                return;
+            }
+            var money=localStorage.getItem('money');
+            //check money is enough
+            if(!money || money<100)
+            {
+                window.alert("餘額不足!!!若要儲值請洽0800-092-000!!!")
+                return;
+            }
+            while(len<plyrArray.length){
+                var plyrHappened=false;
+                //player cannot gotcha money
+                do
+                {
+                    var index=Math.floor(Math.random()*plyrArray.length);
+                    player=plyrArray[index];
+                    if(player=='money')
+                    {
+                        console.log('money!!!');
+                    }
+                }while(player=='money');
+                var objplyr={name:player,src:"https://allen3325.github.io/WebClassProject/player/"+player+".png"}
+                for(let i=len-1;i>=0;i--)
+                {
+                    if(player==localStorage.key(i))
+                    {
+                        plyrHappened=true;
+                        break;
+                    }
+                }
+                if(!plyrHappened)
+                {
+                    cardbook(objplyr);
+                    //update money
+                    money-=100;
+                    localStorage.setItem('money',money);
+                    len=localStorage.length;
+                    window.alert("你抽到了"+player);
+                    break;
+                }
+                if(len==plyrArray.length)
+                {
+                    break;
+                }
+            }
+            updateMoney();
+        }
+        window.addEventListener("load",updateMoney,false);
+    </script>
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        .bg{background-color: rgba(0, 0, 0, 0.904);}
+        .home{
+            color: white;
+            font-size: 18px;
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color:rgb(2, 83, 165);
+            text-align: center;
+            height: 80px;
+            width: 150px;
+            border:none;
+            white-space: nowrap;
+            position: relative;
+            margin-left: 91.3%;
+            transition: 0.5s;
+        }
+        .home:hover{
+            background-color:rgb(204, 43, 49);
+            border-radius: 20%;
+        }
+        .btn{
+            position: relative;
+            margin-left: auto;
+            color: white;
+            font-size: 100px;
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color:#0abab5;
+            text-align: center;
+            height: 500px;
+            width: 800px;
+            border:none;
+            transition: 0.5s;
+        }
+        .btn:hover{
+            border-radius: 20%;
+        }
+        .showmoney{
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color: rgb(221, 6, 139);
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <head>
+        <div id='showmoney' class='showmoney'></div>
+    </head>
+    <body>
+        <button id="test" onclick="random()" class="btn">抽球員</button>
+    </body>
+    <footer>
+        <a href="Home.html"><button class="home">回主頁</button></a>
+    </footer>
+</html>
