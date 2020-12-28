@@ -9,6 +9,21 @@
         var moneyexit=false;
         var moneyinArr=false;
         var plyrArray=["Kobe","Shaq","Chamberlain","Jabbar","JerryWest","MagicJohnson","Worthy","RickBarry","PaulArizin","ChrisMullin","NateThurmond","TimHardaway","JeffMullins","Barkley"];
+        function start()
+        {
+            //preload picture
+            var picURL='';
+            for(let i=0;i<plyrArray.length;i++)
+            {
+                if(plyrArray[i]!='money')
+                {
+                    picURL+='<link rel="preload" href="https://allen3325.github.io/WebClassProject/player/'+plyrArray[i]+'.png" as="image">'
+                }
+            }
+            $('#preload').html(picURL);
+            updateMoney();
+        }
+
         function updateMoney ()
         {
             console.log(String(localStorage.getItem('money')));
@@ -35,6 +50,7 @@
         }
         function random()
         {
+            var output="";
             //check money is in plyrArr
             for(let i=0;i<plyrArray.length;i++)
             {
@@ -95,6 +111,7 @@
                     localStorage.setItem('money',money);
                     len=localStorage.length;
                     window.alert("你抽到了"+player);
+                    output +="<h1>你抽到了</h1><input type='image' src="+objplyr.src+" height='400px' width='300px'/>";
                     break;
                 }
                 if(len==plyrArray.length)
@@ -103,8 +120,10 @@
                 }
             }
             updateMoney();
+            console.log(output);
+            $('#showcard').html(output);
         }
-        window.addEventListener("load",updateMoney,false);
+        window.addEventListener("load",start,false);
     </script>
     <style>
         @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
@@ -153,12 +172,19 @@
             white-space: nowrap;
             position: relative;
         }
+        div{
+            color: white;
+            font-family: Noto Sans TC, Perpetua, serif;
+            text-align: center;
+        }
     </style>
     <head>
+        <div id='preload'></div>
         <div id='showmoney' class='showmoney'></div>
     </head>
     <body>
         <button id="test" onclick="random()" class="btn">抽球員</button>
+        <div id="showcard"></div>
     </body>
     <footer>
         <a href="https://allen3325.github.io/WebClassProject/CardBook.html"><button class="home">球員收藏冊</button>
