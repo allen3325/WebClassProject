@@ -21,18 +21,6 @@
                     document.getElementById("result").innerHTML="";
                 });
             });
-            function cardbook(player)
-            {
-                console.log(player.name);
-                var Name=player.name;
-                var Src=player.src;
-                var objA={"name":player.name, "pic":player.src};
-                var JSONA=JSON.stringify(objA);
-                console.log(JSONA);
-                var KEY=objA.name;
-                localStorage.setItem(KEY,JSONA);
-                window.alert("已加入球員卡收藏冊中");
-            }
         </script>
         <style>
             /*從這裡到-----------------------------------------------------------------------------------------------------------------------------*/
@@ -132,13 +120,13 @@
         <button class="btn2">收回球員卡</button>
         <!--每隔6張圖片換行-->
         <div class="initial img1"><ul>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Kobe.png" height="400px" width="300px" name="Kobe" id="Kobe" onclick="cardbook(Kobe)"/>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Shaq.png" height="400px" width="300px" name="Shaq" id="Shaq" onclick="cardbook(Shaq)"/>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Chamberlain.png" height="400px" width="300px" name="Chamberlain" id="Chamberlain" onclick="cardbook(Chamberlain)"/>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Jabbar.png" height="400px" width="300px" name="Jabbar" id="Jabbar" onclick="cardbook(Jabbar)"/>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/JerryWest.png" height="400px" width="300px" name="JerryWest" id="JerryWest" onclick="cardbook(JerryWest)"/>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/MagicJohnson.png" height="400px" width="300px" name="MagicJohnson" id="MagicJohnson" onclick="cardbook(MagicJohnson)"/><br>
-            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Worthy.png" height="400px" width="300px" name="Worthy" id="Worthy" onclick="cardbook(Worthy)"/>
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Kobe.png" height="400px" width="300px" name="Kobe" id="Kobe" />
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Shaq.png" height="400px" width="300px" name="Shaq" id="Shaq" />
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Chamberlain.png" height="400px" width="300px" name="Chamberlain" id="Chamberlain" />
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Jabbar.png" height="400px" width="300px" name="Jabbar" id="Jabbar" />
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/JerryWest.png" height="400px" width="300px" name="JerryWest" id="JerryWest" />
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/MagicJohnson.png" height="400px" width="300px" name="MagicJohnson" id="MagicJohnson" /><br>
+            <input type="image" src="https://allen3325.github.io/WebClassProject/player/Worthy.png" height="400px" width="300px" name="Worthy" id="Worthy" />
         </ul></div>
         <div class="Text" id="result"></div>
     </body>

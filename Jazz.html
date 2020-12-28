@@ -21,17 +21,6 @@
                     document.getElementById("result").innerHTML="";
                 });
             });
-            function cardbook(player)
-            {
-                console.log(player.name);
-                var Name=player.name;
-                var Src=player.src;
-                var objA={"name":player.name, "pic":player.src};
-                var JSONA=JSON.stringify(objA);
-                var KEY=objA.name;
-                localStorage.setItem(KEY,JSONA);
-                window.alert("已加入球員卡收藏冊中");
-            }
         </script>
         <style>
             /*從這裡到-----------------------------------------------------------------------------------------------------------------------------*/
@@ -126,12 +115,11 @@
         </style>
     </head>
     <body>
-        <h1>點擊球員加入球員卡收藏冊</h1>
         <button class="btn">秀出有哪些球員</button>
         <button class="btn2">收回球員卡</button>
         <!--每隔6張圖片換行-->
         <div class="initial img1"><ul>
-            <!--<input type="image" src="https://allen3325.github.io/WebClassProject/player/Barkley.png" height="400px" width="300px" name="Barkley" id="Barkley" onclick="cardbook(Barkley)"/>-->
+            <!--<input type="image" src="https://allen3325.github.io/WebClassProject/player/Barkley.png" height="400px" width="300px" name="Barkley" id="Barkley" />-->
             
         </ul></div>
         <div class="Text" id="result"></div>
