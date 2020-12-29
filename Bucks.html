@@ -5,114 +5,115 @@
     src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>    
+    <script>
+        var output="";
+        $(document).ready(function(){
+            $('.btn').click(function () { 
+                $('.img1').delay(200).slideDown();
+            });
+        });
+        $(document).ready(function(){
+            $('.btn2').click(function () { 
+                $('.img1').delay(200).slideUp();
+                document.getElementById("result").innerHTML="";
+            });
+        });
+    </script>
+    <style>
+        /*從這裡到-----------------------------------------------------------------------------------------------------------------------------*/
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        .btn{
+            font-size: 18px;
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color:rgb(215, 168, 249);
+            text-align: center;
+            height: 80px;
+            width: 150px;
+            opacity: 1;
+            border:none;
+            transition: 0.5s;
+        }
+        .btn:hover{
+            background-color:rgb(249, 251, 56);
+            border-radius: 20%;
+            opacity: 0.7;
+        }
+        footer{
+            white-space: nowrap;
+            position: relative;
+            margin-left: 83.7%;
+        }
+        .home{
+            font-size: 18px;
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color:rgb(215, 168, 249);
+            text-align: center;
+            height: 80px;
+            width: 150px;
+            opacity: 1;
+            border:none;
+            transition: 0.5s;
+        }
+        .home:hover{
+            background-color:rgb(249, 251, 56);
+            border-radius: 20%;
+            opacity: 0.7;
+        }
+        .btn2{
+            font-size: 18px;
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color:rgb(215, 168, 249);
+            text-align: center;
+            height: 80px;
+            width: 150px;
+            opacity: 1;
+            border:none;
+            transition: 0.5s;
+        }
+        .btn2:hover{
+            background-color:rgb(249, 251, 56);
+            border-radius: 20%;
+            opacity: 0.7;
+        }
+        .bg
+        {
+            background-image: url("https://allen3325.github.io/WebClassProject/assets/Bucks.jpg");
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-repeat:repeat;
+            background-size: cover;
+        }
+        .initial{display: none;}
+        ul{white-space: nowrap;}
+        input
+        {
+            opacity: 1;
+            transition: 0.5s;
+        }
+        input:hover{
+            border-radius: 30%;
+            opacity: 0.8;
+        }
+        /*到這裡勿動----------------------------------------------------------------------------------------------------------------------------*/
+        p{
+            font-size: 20px;
+            font-family: Noto Sans TC, Perpetua, serif;
+            background-color: aliceblue;
+            color:hotpink;
+        }
+        h1
+        {   
+            text-align: center;
+            background-color: rgba(6, 127, 233, 0.603);
+            color:hotpink;
+            font-family: Noto Sans TC, Perpetua, serif;
+        }
+    </style>
     <head>
         <meta charset="utf-8">
         <title>Bucks</title>
-        <script>
-            var output="";
-            $(document).ready(function(){
-                $('.btn').click(function () { 
-                    $('.img1').delay(200).slideDown();
-                });
-            });
-            $(document).ready(function(){
-                $('.btn2').click(function () { 
-                    $('.img1').delay(200).slideUp();
-                    document.getElementById("result").innerHTML="";
-                });
-            });
-        </script>
-        <style>
-            /*從這裡到-----------------------------------------------------------------------------------------------------------------------------*/
-            @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-            .btn{
-                font-size: 18px;
-                font-family: Noto Sans TC, Perpetua, serif;
-                background-color:rgb(215, 168, 249);
-                text-align: center;
-                height: 80px;
-                width: 150px;
-                opacity: 1;
-                border:none;
-                transition: 0.5s;
-            }
-            .btn:hover{
-                background-color:rgb(249, 251, 56);
-                border-radius: 20%;
-                opacity: 0.7;
-            }
-            footer{
-                white-space: nowrap;
-                position: relative;
-                margin-left: 83.7%;
-            }
-            .home{
-                font-size: 18px;
-                font-family: Noto Sans TC, Perpetua, serif;
-                background-color:rgb(215, 168, 249);
-                text-align: center;
-                height: 80px;
-                width: 150px;
-                opacity: 1;
-                border:none;
-                transition: 0.5s;
-            }
-            .home:hover{
-                background-color:rgb(249, 251, 56);
-                border-radius: 20%;
-                opacity: 0.7;
-            }
-            .btn2{
-                font-size: 18px;
-                font-family: Noto Sans TC, Perpetua, serif;
-                background-color:rgb(215, 168, 249);
-                text-align: center;
-                height: 80px;
-                width: 150px;
-                opacity: 1;
-                border:none;
-                transition: 0.5s;
-            }
-            .btn2:hover{
-                background-color:rgb(249, 251, 56);
-                border-radius: 20%;
-                opacity: 0.7;
-            }
-            .bg
-            {
-                background-image: url("https://allen3325.github.io/WebClassProject/assets/Bucks.jpg");
-                height: 100%;
-                width: 100%;
-                background-position: center;
-                background-repeat:repeat;
-                background-size: cover;
-            }
-            .initial{display: none;}
-            ul{white-space: nowrap;}
-            input
-            {
-                opacity: 1;
-                transition: 0.5s;
-            }
-            input:hover{
-                border-radius: 30%;
-                opacity: 0.8;
-            }
-            /*到這裡勿動----------------------------------------------------------------------------------------------------------------------------*/
-            p{
-                font-size: 20px;
-                font-family: Noto Sans TC, Perpetua, serif;
-                background-color: aliceblue;
-                color:hotpink;
-            }
-            h1
-            {   
-                text-align: center;
-                background-color: rgba(6, 127, 233, 0.603);
-                color:hotpink;
-                font-family: Noto Sans TC, Perpetua, serif;
-            }
-        </style>
+        <link rel="preload" href="https://allen3325.github.io/WebClassProject/assets/Bucks.jpg" as="image">
     </head>
     <body>
         <button class="btn">秀出有哪些球員</button>
