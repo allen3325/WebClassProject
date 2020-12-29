@@ -6,6 +6,25 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
             <script>
+                var i=0;
+                $(document).ready(function(){
+                    $("#load").animate({width:'0px'});
+                    $("#load").delay(20).animate({width:'20%'});
+                    $("#load").delay(20).animate({width:'40%'});
+                    $("#load").delay(20).animate({width:'60%'});
+                    $("#load").delay(20).animate({width:'80%'});
+                    $("#load").delay(20).animate({width:'100%'});
+                    start();
+                    OK();
+                });
+                function OK()
+                {
+                    window.setTimeout(function (){
+                        $('#loading').hide();
+                        $('#ready').show();
+                        $('#ready-foot').show();
+                    },3000)
+                }
                 var output="";
                 $(document).ready(function(){
                     $('.btn1').click(function () { 
@@ -203,6 +222,14 @@
             <style>
                 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
                 .bg{background-color: rgba(0, 0, 0, 0.904);}
+                #ready{display: none;}
+                #ready-foot{display: none;}
+                #loading{
+                    font-family: Noto Sans TC, Perpetua, serif;
+                    font-size: 45px;
+                    color: white;
+                    text-align: center;
+                }
                 ul{white-space: nowrap;}
                 .initial{display: none;}
                 .btn1{
@@ -317,17 +344,27 @@
             </style>
         <head>
             <div id='preload'></div>
+            <div  id='loading' >
+                頁面載入中
+                <div id='bar' style="border-color:#000000;border-style:solid;height:6px;width:346px;position:absolute;"></div>
+                <div id='load' style="background:#98bf21;height:10px;width:0px;position:absolute;"></div> 
+            </div>
         </head>
-        <h1>球員收藏冊</h1>
         <body>
-            <h1 class="temp">點擊球員秀出球員介紹;雙擊球員將球員移出球員收藏冊</h1>
-            <button class="btn1" id="btn1">打開收藏冊</button>
-            <button class="btn2" id="btn2">關閉收藏冊</button><br>
-            <div class="initial img1" id="result"><ul>
-            </ul></div>
+            <div id='ready'>
+                <h1>球員收藏冊</h1>
+                <h1 class="temp">點擊球員秀出球員介紹;雙擊球員將球員移出球員收藏冊</h1>
+                <button class="btn1" id="btn1">打開收藏冊</button>
+                <button class="btn2" id="btn2">關閉收藏冊</button><br>
+                <div class="initial img1" id="result">
+                    <ul></ul>
+                </div>
+            </div>
         </body>
         <footer>
-            <div id="block" class="block"></div>
-            <a href="Home.html"><button class="home">回主頁</button>
+            <div id='ready-foot'>
+                <div id="block" class="block"></div>
+                <a href="Home.html"><button class="home">回主頁</button>
+            </div>
         </footer>
 </html>
