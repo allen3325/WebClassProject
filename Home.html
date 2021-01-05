@@ -4,12 +4,11 @@
     <script>
         var i=0;
         $(document).ready(function(){
-            $("#load").animate({width:'0px'});
-            $("#load").delay(20).animate({width:'20%'});
-            $("#load").delay(20).animate({width:'40%'});
-            $("#load").delay(20).animate({width:'60%'});
-            $("#load").delay(20).animate({width:'80%'});
-            $("#load").delay(20).animate({width:'100%'});
+            $("#load").animate({width:'20%'});
+            $("#load").animate({width:'40%'});
+            $("#load").animate({width:'60%'});
+            $("#load").animate({width:'80%'});
+            $("#load").animate({width:'100%'});
             OK();
         });
         function OK()
@@ -19,7 +18,7 @@
                 $('#ready').show();
                 $('#map').show();
                 $('#ready-btn').show();
-            },3000)
+            },2000)
         }
     </script>
     <style>
@@ -54,7 +53,7 @@
         }
         .temp{
             font-family: 'KaiTi';
-            font-size: 50px;
+            font-size: 70px;
             text-align: center;
             background: -webkit-linear-gradient(bottom,rgb(182, 183, 194) 0,rgb(169, 170, 180) 26%,rgb(141, 142, 151) 68%, rgb(120, 121, 128) 90% ,rgb(69, 69, 73) 100%);
             -webkit-background-clip: text;
@@ -73,7 +72,12 @@
             <div id='load' style="background:#98bf21;height:10px;width:0px;position:absolute;"></div> 
         </div>
         <div id='ready'>
-            <h1 class="temp">點擊球隊進入球隊球員介紹頁面<br>球員收藏冊在右下角喔~~~</h1>
+            <h1 class="temp">點擊球隊進入球隊球員介紹頁面</h1>
+        </div>
+        <div id='ready-btn'>
+            <a href="https://allen3325.github.io/WebClassProject/CardBook.html"><button class="home">球員收藏冊</button></a>
+            <a href="https://allen3325.github.io/WebClassProject/PlayerLottery.html"><button class="home">抽卡頁面</button></a>
+            <a href="https://allen3325.github.io/WebClassProject/Game.html"><button class="home">小遊戲</button></a>
         </div>
     </head>
     <body>
@@ -106,10 +110,5 @@
         </div>
     </body>
     <footer>
-       <div id='ready-btn'>
-            <a href="https://allen3325.github.io/WebClassProject/CardBook.html"><button class="home">球員收藏冊</button>
-            <a href="https://allen3325.github.io/WebClassProject/PlayerLottery.html"><button class="home">抽卡頁面</button>
-            <a href="https://allen3325.github.io/WebClassProject/Game.html"><button class="home">小遊戲</button>
-        </div>
     </footer>
 </html>
