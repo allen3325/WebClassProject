@@ -19,6 +19,20 @@
                 $('#map').show();
                 $('#ready-btn').show();
             },2000)
+            Prefetch();
+        }
+        function Prefetch()
+        {
+            //prefetch picture
+            var picURL='';
+            for(let i=0;i<plyrArray.length;i++)
+            {
+                if(plyrArray[i]!='money')
+                {
+                    picURL+='<link rel="prefetch" href="player/'+plyrArray[i]+'.png" as="image">'
+                }
+            }
+            $('#Prefetch').html(picURL);
         }
     </script>
     <style>
@@ -85,6 +99,7 @@
         <link rel="prefetch" href="https://allen3325.github.io/WebClassProject/assets/Suns.jpg" as="image">
         <link rel="prefetch" href="https://allen3325.github.io/WebClassProject/assets/TrailBlazers.jpg" as="image">
         <link rel="prefetch" href="https://allen3325.github.io/WebClassProject/assets/Warriors.jpg" as="image">
+        <div id='Prefetch'></div>
 
         <div  id='loading' >
             頁面載入中
